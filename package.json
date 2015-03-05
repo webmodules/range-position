@@ -30,6 +30,7 @@
   },
   "homepage": "https://github.com/webmodules/range-position",
   "devDependencies": {
-    "typescript": "~1.4.1"
+    "typescript": "~1.4.1",
+    "zuul": "2"
   }
 }
