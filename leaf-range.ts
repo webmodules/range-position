@@ -4,11 +4,11 @@
  * on leaf DOM nodes.
  */
 
-function leafRange(input: Range): Range {
-  var sc = input.startContainer;
-  var so = input.startOffset;
-  var ec = input.endContainer;
-  var eo = input.endOffset;
+function leafRange(range: Range): Range {
+  var sc = range.startContainer;
+  var so = range.startOffset;
+  var ec = range.endContainer;
+  var eo = range.endOffset;
   var next;
 
   // nest range start
@@ -75,10 +75,11 @@ function leafRange(input: Range): Range {
     }
   }
 
-  var output = document.createRange();
-  output.setStart(sc, so);
-  output.setEnd(ec, eo);
-  return output;
+  // modify the passed-in Range instance (users should call `cloneRange()`
+  // first if they don't want the original Range to be modified)
+  range.setStart(sc, so);
+  range.setEnd(ec, eo);
+  return range;
 }
 
 export = leafRange;

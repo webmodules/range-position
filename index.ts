@@ -9,10 +9,12 @@ function rangePosition(r: Range, n: Node): rangePosition.Position {
     throw new TypeError('A Node instance must be given');
   }
 
-  var r1 = leafRange(r);
+  // clone to not modify the passed-in Range
+  var r1 = leafRange(r.cloneRange());
+
   var r2 = document.createRange();
   r2.selectNodeContents(n);
-  r2 = leafRange(r2);
+  leafRange(r2);
 
   var comparison1 = r1.compareBoundaryPoints(Range.START_TO_START, r2);
   if (comparison1 < 0) {
