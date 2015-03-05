@@ -1,0 +1,35 @@
+{
+  "name": "range-position",
+  "version": "0.0.0",
+  "description": "Determine where a collapsed Range is positioned relative to a DOM Node",
+  "main": "index.js",
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/webmodules/range-position.git"
+  },
+  "keywords": [
+    "dom",
+    "browser",
+    "range",
+    "position",
+    "node",
+    "element",
+    "start",
+    "before",
+    "middle",
+    "after",
+    "end"
+  ],
+  "author": "Nathan Rajlich <nathan@tootallnate.net> (http://n8.io/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/webmodules/range-position/issues"
+  },
+  "homepage": "https://github.com/webmodules/range-position",
+  "devDependencies": {
+    "typescript": "~1.4.1"
+  }
+}
