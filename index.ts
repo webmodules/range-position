@@ -3,7 +3,10 @@ import leafRange = require('./leaf-range');
 function rangePosition(r: Range, n: Node): rangePosition.Position {
 
   if (!r.collapsed) {
-    throw new Error('Range is not collapsed.');
+    throw new TypeError('Range is not collapsed');
+  }
+  if (!n) {
+    throw new TypeError('A Node instance must be given');
   }
 
   var r1 = leafRange(r);
