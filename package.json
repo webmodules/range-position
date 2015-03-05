@@ -1,6 +1,6 @@
 {
   "name": "range-position",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Determine where a collapsed Range is positioned relative to a DOM Node",
   "main": "index.js",
   "scripts": {
