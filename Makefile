@@ -12,7 +12,7 @@ TSC ?= $(NODE) $(BIN)/tsc
 ZUUL ?= $(NODE) $(BIN)/zuul
 
 # source files
-TS_FILES := $(wildcard *.ts)
+TS_FILES := $(filter-out $(wildcard *.d.ts), $(wildcard *.ts))
 
 # compiled files
 COMPILED_FILES := $(TS_FILES:.ts=.js)
@@ -22,6 +22,9 @@ build: $(COMPILED_FILES)
 %.js: %.ts
 	@printf '\e[1;32m %-10s\e[m %s > %s\n' "typescript" "$<" "$@"
 	@$(TSC) --module commonjs --declaration "$<"
+
+clean:
+	rm -f $(COMPILED_FILES) $(TS_FILES:.ts=.d.ts)
 
 test:
 	@if [ "x$(BROWSER_PLATFORM)" = "x" ]; then \
@@ -39,4 +42,4 @@ test:
 		test/*.js; \
 	fi
 
-.PHONY: build test
+.PHONY: build clean test
